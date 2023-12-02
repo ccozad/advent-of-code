@@ -14,10 +14,9 @@ function parseGame(game) {
         rounds: []
     };
     let colonIndex = game.indexOf(":");
-    rawRounds = game.substring(colonIndex + 1);
+    let rawRounds = game.substring(colonIndex + 1);
     let rounds = rawRounds.split(";");
     for(let i =0; i < rounds.length; i++) {
-        console.log(rounds[i]);
         let results = rounds[i].split(",");
         let outcomes = {
             "red": 0,
@@ -66,15 +65,11 @@ let impossibleGames = [];
 
 for (let i = 0; i < games.length; i++) {
     let game = parseGame(games[i]);
-    console.log("\n--------------\n");
-    console.log(`Game ${i + 1}: ${JSON.stringify(game, null, 4)}`);
     totalPower.push(game.power);
     let gamePossible = isGamePossible(game, target);
     if (gamePossible) {
-        console.log(`Game ${i + 1} is possible`);
         possibleGames.push(i + 1);
     } else {
-        console.log(`Game ${i + 1} is impossible`);
         impossibleGames.push(i + 1);
     }
 }
