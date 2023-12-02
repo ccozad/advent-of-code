@@ -19,13 +19,13 @@ function expandText (text) {
 }
 
 //Read each line in the file named fileName
-let file = fs.readFileSync(fileName, 'utf8');
+const file = fs.readFileSync(fileName, 'utf8');
 const lines = file.split(/\r?\n/);
 let sum = 0;
 
 for (let i = 0; i < lines.length; i++) {
     // Set replacedText with lines[i] to solve for part 1
-    let replacedText = expandText(lines[i]);
+    const replacedText = expandText(lines[i]);
     const firstDigit = replacedText.match(/(\d{1}?)/)[1];
     const lastDigit = replacedText.match(/(\d{1}?)(?:\D*)$/)[1];
     const number = Number(`${firstDigit}${lastDigit}`);
