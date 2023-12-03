@@ -13,6 +13,7 @@ function markSingleCellGear(i, j, gear, area) {
     if ( i >= 0 && i < area.length && j >= 0 && j < area[0].length) {
         if(area[i][j].value) {
             area[i][j].isGear = true;
+            area[i][j].gear = gear;
         }
     }
 }
