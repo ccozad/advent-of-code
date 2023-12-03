@@ -29,7 +29,14 @@ The general apporach for day 1 is to recognize the first and last digits amid a 
     - Quantifiers https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers
 
 ## Day 2
+
 The general approach for day 2 is to parse text and keep track of categorized numerical data.
 
   - Objects as Dictionaries https://www.geeksforgeeks.org/how-to-create-dictionary-and-add-key-value-pairs-dynamically/
   - Working with arrays https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+## Day 3
+
+The general approach for day 3 is to load data into a two dimensional (2D) array, traverse neighboring cells in the 2D array, then process the array in the the natural ordering of the 2D array. The second part adds an additional task of counting the number of neighboring cells and only doing operations for cells with a given number of neighbors.
+
+  - Working with multi-dimensional arrays https://www.freecodecamp.org/news/javascript-2d-arrays/
