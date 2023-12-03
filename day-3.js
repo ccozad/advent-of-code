@@ -57,7 +57,6 @@ const file = fs.readFileSync(fileName, 'utf8');
 const line = file.split(/\r?\n/);
 const area = [];
 const symbols = [];
-const gears = [];
 for (let i = 0; i < line.length; i++) {
     area.push([]);
     for (let j = 0; j < line[i].length; j++) {
@@ -65,8 +64,7 @@ for (let i = 0; i < line.length; i++) {
             area[i].push({ value: line[i][j]});
         } else if (line[i][j].match(/[\*]/i)) {
             area[i].push({ symbol: line[i][j], isGear: true});
-            symbols.push({symbol: line[i][j], x: i, y: j});
-            gears.push({symbol: line[i][j], x: i, y: j});
+            symbols.push({symbol: line[i][j], x: i, y: j, isGear: true});
         } else if (line[i][j].match(/[^\.]/i)) {
             area[i].push({ symbol: line[i][j]});
             symbols.push({symbol: line[i][j], x: i, y: j});
@@ -83,11 +81,11 @@ console.log("Symbols:");
 console.log(symbols);
 
 for (let i = 0; i < symbols.length; i++) {
-    markAllAdjacentCellsPartNumber(symbols[i].x, symbols[i].y, area);
-}
+    if (symbols[i].isGear) {
+        markAllAdjacentGear(symbols[i].x, symbols[i].y, i, area);
+    }
 
- for(let i = 0; i < gears.length; i++) {
-    markAllAdjacentGear(gears[i].x, gears[i].y, i, area);
+    markAllAdjacentCellsPartNumber(symbols[i].x, symbols[i].y, area);
 }
 
 console.log("Processed area:")
