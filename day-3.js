@@ -38,7 +38,6 @@ function markAllAdjacentCellsPartNumber(i, j, area) {
     markSingleCellPartNumber(i - 1, j + 1, area); // f
     markSingleCellPartNumber(i, j + 1, area); // g
     markSingleCellPartNumber(i + 1, j + 1, area); // h
-    
 }
 
 function markAllAdjacentGear(i, j, gear, area) {
@@ -50,7 +49,6 @@ function markAllAdjacentGear(i, j, gear, area) {
     markSingleCellGear(i - 1, j + 1, gear, area); // f
     markSingleCellGear(i, j + 1, gear, area); // g
     markSingleCellGear(i + 1, j + 1, gear, area); // h
-    
 }
 
 const file = fs.readFileSync(fileName, 'utf8');
@@ -73,12 +71,6 @@ for (let i = 0; i < line.length; i++) {
         }
     }
 }
-console.log("Processed area:")
-for (let i = 0; i < 5; i++) {
-    console.log(area[i]);
-}
-console.log("Symbols:");
-console.log(symbols);
 
 for (let i = 0; i < symbols.length; i++) {
     if (symbols[i].isGear) {
@@ -86,11 +78,6 @@ for (let i = 0; i < symbols.length; i++) {
     }
 
     markAllAdjacentCellsPartNumber(symbols[i].x, symbols[i].y, area);
-}
-
-console.log("Processed area:")
-for (let i = 0; i < 5; i++) {
-    console.log(area[i]);
 }
 
 let numbers = [];
