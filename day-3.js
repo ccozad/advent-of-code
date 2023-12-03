@@ -1,8 +1,12 @@
 const fs = require('fs');
 const fileName = "day-3-input.txt";
 
+function isValidIndex(i, j, area) {
+    return i >= 0 && i < area.length && j >= 0 && j < area[0].length;
+}
+
 function markSingleCellPartNumber(i, j, area) {
-    if ( i >= 0 && i < area.length && j >= 0 && j < area[0].length) {
+    if ( isValidIndex(i, j, area)) {
         if(area[i][j].value) {
             area[i][j].isPartNumber = true;
         }
@@ -10,7 +14,7 @@ function markSingleCellPartNumber(i, j, area) {
 }
 
 function markSingleCellGear(i, j, gear, area) {
-    if ( i >= 0 && i < area.length && j >= 0 && j < area[0].length) {
+    if ( isValidIndex(i, j, area)) {
         if(area[i][j].value) {
             area[i][j].isGear = true;
             area[i][j].gear = gear;
