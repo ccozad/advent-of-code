@@ -24,7 +24,7 @@ This document is written with JavaScript in mind. Where possible appropriate gen
   - More advanced math operations such as exponents and the modulus operator (whole number remainder of division) may also be needed
   - You'll need to return the answer to calculations. Common approaching include writing content to the screen or to a file
 
-## Ideas
+### Ideas
   - Data structures
     - Arrays
     - Lists
