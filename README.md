@@ -99,7 +99,7 @@ The general approach for day 2 is to parse text and keep track of categorized nu
   - Read all text from a file
   - Arrays
   - Lists
-  - Dictionaries
+  - Use Dictionaries to store category data
 
 ### Resources
   - Working with arrays https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
@@ -109,6 +109,18 @@ The general approach for day 2 is to parse text and keep track of categorized nu
 
 The general approach for day 3 is to load data into a two dimensional (2D) array, traverse neighboring cells in the 2D array, then process the array in the the natural ordering of the 2D array. The second part adds an additional task of counting the number of neighboring cells and only doing operations for cells with a given number of neighbors.
 
+### Concepts
+  - Arrays can be accessed using sequential numerical indexes
+  - Two dimensional data like a table with rows and columns can be represented as an array of arrays or in a single array with extra calculations to logically divide storage into rows and columns
+  - The regular addressing scheme of table data structures allows easy access to neighboring cells
+
+### Ideas
+  - Read all text from a file
+  - 2D Arrays
+  - 2D array neighbors a given index
+  - Iterate a 2D array
+
+### Resources
   - Working with multi-dimensional arrays https://www.freecodecamp.org/news/javascript-2d-arrays/
 
 ## Day 4
@@ -116,6 +128,23 @@ The general approach for day 3 is to load data into a two dimensional (2D) array
 The general approach for day 4 is to parse two lists of numbers, then use a dictionary lookup to test if each of your numbers match the winning numbers. You could also do this check with set objects and the intersect operation between the two sets. (the reference solution uses the dictionary approach) Point scoring in part 1 requires the exponentian operator to raise a number to a power. Part 2 introduces a recursive rule set that expands the number of cards. While recursion can be accomplished using recursive methods, iterative approaches are subjectively easier to comprehend because the reader does not have to consider the implied call stack that comes from using functions. 
 
 As Wikipedia explains: *"Every recursive function can be transformed into an iterative function by replacing recursive calls with iterative control constructs and simulating the call stack with a stack explicitly managed by the program."*
+
+### Concepts
+  - Dictionaries offfer fast look up times
+  - Sets have well established math operations to find difference and similarities with other sets
+  - Recursion creates a chain of operations that ends with a base case
+  - Recursion can be represented as iteration
+
+### Ideas
+
+  - Using dictionaries as a lookup table
+  - Sets (Math)
+  - Set Operations
+  - Recursion
+  - Iteration
+  - Recursion to iteration
+
+  ### Resources
 
   - Raise a number to a power https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
