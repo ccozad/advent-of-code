@@ -7,7 +7,7 @@ This document has references for people who want to learn the ideas behind solvi
 
 The approach described for each day is not the only way to solve each puzzle. See the corresponding mega threads for each day for more ideas on how to approach problems.
 
-Approaches descrived here will generally help you reach a solution but you likely won't be winning any speed or code golf competitions. When you can instantly recognize these concepts you're ready to learn more advanced concepts and take on more competitive approaches.
+Approaches described here will generally help you reach a solution but you likely won't be winning any speed or code golf competitions. When you can instantly recognize these concepts you're ready to learn more advanced concepts and take on more competitive approaches.
 
 # Applying to Other Languages
 
