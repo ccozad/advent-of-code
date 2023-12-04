@@ -7,7 +7,7 @@ Some references for people who want to learn the ideas behind solving Advent of 
 
 ## General
   - Control Flow
-    -Loops and conditions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+    - Loops and conditions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
   - Console
     - Print content to the screen https://developer.mozilla.org/en-US/docs/Web/API/console/log_static 
   - File Handling
