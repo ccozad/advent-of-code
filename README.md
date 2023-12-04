@@ -72,6 +72,7 @@ The general apporach for day 1 is to recognize the first and last digits amid a 
   - Many programming languages support regular expressions and often share a common subset of conventions
 
 ### Ideas
+  - Read all text from a file
   - Regular expression, RegEx
   - Regular expression character classes
   - Regular expression groups
@@ -95,6 +96,7 @@ The general approach for day 2 is to parse text and keep track of categorized nu
 
 
 ### Ideas
+  - Read all text from a file
   - Arrays
   - Lists
   - Dictionaries

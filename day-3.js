@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "day-3-input.txt";
+const fileName = "day-3-test.txt";
 
 function isValidIndex(i, j, area) {
     return i >= 0 && i < area.length && j >= 0 && j < area[0].length;

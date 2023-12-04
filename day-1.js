@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "day-1-input.txt";
+const fileName = "day-1-test.txt";
 
 // Have to preserve first and last character to solve undocumented
 // overlap condition such as sevenine

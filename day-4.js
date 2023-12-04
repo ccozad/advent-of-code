@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "day-4-input.txt";
+const fileName = "day-4-test.txt";
 
 const file = fs.readFileSync(fileName, 'utf8');
 const games = file.split(/\r?\n/);

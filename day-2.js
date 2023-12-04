@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "day-2-input.txt";
+const fileName = "day-2-test.txt";
 
 const target = {
     "red": 12,
