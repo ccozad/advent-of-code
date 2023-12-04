@@ -3,9 +3,52 @@ Advent of Code 2023 workspace
 
 # Notes
 
-Some references for people who want to learn the ideas behind solving Advent of Code problems with Javascript.
+This document has references for people who want to learn the ideas behind solving Advent of Code problems with Javascript.
+
+The approach described for each day is not the only way to solve each puzzle. See the corresponding mega threads for each day for more ideas on how to approach problems.
+
+Approaches descrived here will generally help you reach a solution but you likely won't be winning any speed or code golf competitions. When you can instantly recognize these concepts you're ready to learn more advanced concepts and take on more competitive approaches.
+
+# Applying to Other Languages
+
+This document is written with JavaScript in mind. Where possible appropriate general terms are provided so you can adapt the ideas to your programming language of choice. Use the format `<idea> in <language>` For example if you were working in Rust you might search for `read all teaxt from a file in Rust`
 
 ## General
+
+### Concepts
+  - Many problems presented on coding challenges have descriptions that imply the use of certain data structures. 
+  - You'll need to use various constructs to make choices and repeat operations
+  - Data is typically loaded from files outside of the code
+  - Basic manipulation of text data such as accessing individual characters, finding text and extracting portions of text will be commonly done
+  - Basic math operations such as addition, subtraction, multiplication and division will be common
+  - More advanced math operations such as exponents and the modulus operator (whole number remainder of division) may also be needed
+  - You'll need to return the answer to calculations. Common approaching include writing content to the screen or to a file
+
+## Ideas
+  - Data structures
+    - Arrays
+    - Lists
+    - 2D Arrays
+    - 3D Arrays
+    - N Dimension Arrays
+    - Dictionary
+    - Hash Table
+    - Stack / Last in Last Out / LIFO
+    - Queue / First in First Out/ FIFO
+    - Directed graph
+    - Tree
+    - Mesh Network
+  - Input/Output, I/O
+    - Read all text in file
+    - Write all text to file
+  - String/Text Operations
+    - Split text based a delimiter
+    - Find text
+    - Extract text
+    - Replace text
+  
+
+### Resources
   - Control Flow
     - Loops and conditions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
   - Console
@@ -24,6 +67,17 @@ Some references for people who want to learn the ideas behind solving Advent of 
 
 The general apporach for day 1 is to recognize the first and last digits amid a wide variety of text. Part 2 introduces a tricky undocumented case that you have to code around.
 
+### Concepts
+  - Regular expressions are a special language that represent text patterns and operations such as extracting specific parts of a pattern called matches
+  - Many programming languages support regular expressions and often share a common subset of conventions
+
+### Ideas
+  - Regular expression, RegEx
+  - Regular expression character classes
+  - Regular expression groups
+  - Regular expression quantifiers
+
+### Resources
   - Regular expressions
     - RegEx Overview https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
     - Character classes https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes
@@ -34,7 +88,20 @@ The general apporach for day 1 is to recognize the first and last digits amid a 
 
 The general approach for day 2 is to parse text and keep track of categorized numerical data using dictionaries.
 
+### Concepts
+  - Dictionaries allow values to be accessed using arbitrary keys
+  - Arrays are accessed using a numerical index without gaps between each index.
+  - Both dictionaries and arrays are fast to access when you know exactly what you want. In Big-O notation we say that reads are O(1), meaning reads usually take a fixed amount of time
+
+
+### Ideas
+  - Arrays
+  - Lists
+  - Dictionaries
+
+### Resources
   - Working with arrays https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
 
 ## Day 3
 
