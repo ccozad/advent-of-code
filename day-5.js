@@ -24,9 +24,6 @@ const maps = {
 function processInputs(inputs, map) {
     for( let i = 0; i < inputs.length; i++) {
         let parts = inputs[i].split(" ").map(Number);
-        if (parts.length != 3) {
-            console.log("Why are there not three parts????");
-        }
         let destStart = parts[0];
         let sourceStart = parts[1];
         let rangeLength = parts[2];
