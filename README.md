@@ -149,3 +149,26 @@ As Wikipedia explains: *"Every recursive function can be transformed into an ite
   - Raise a number to a power https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
   - Overview of recursion https://en.wikipedia.org/wiki/Recursion_(computer_science)
+
+# Day 5
+
+Data parsing for Day 5 includes the new idea of storing data into different groups. Individual lists or arrays can be used to organize inputs. Day 5 raises the difficulty because the real input has far too many values to be brute forced. The large number spans in the input prevents one from storing all possible keys and requires one to take a different strategy of storing range information and performing a calculation. The number of maps that need to be traversed raises the complexity level and introduces the need to use functions to organize code that is run many times. 
+
+The second part of day 5 pushes the limits even more with giant ranges of numbers to evaluate location distances for. The overlap between two ranges can be calculated to reduce the number of inputs to evaluate. This approach allowed the calculations to at least reach an answer in several minutes. It's unusual for puzzle problems like this to take this long to solve so there is probably another way to further reduce the number of inputs that need to be evaluated or pre-calculate intermediate values, but this optimizationn is not clear at this time.
+
+## Concepts
+  - Not all problems can be solved with brute force, instead math, algorithms and simplifications are often required to get an answer
+  - Functions help us organize our code into repeatable, testable blocks
+  - We can map a value to the outcome of a calculation or function
+  - Reducing the search space can allow calculations to complete in a reasonable time
+
+## Ideas
+  - Test if a value is in a number range
+  - Determine the overlap of two ranges
+  - Evaluate a list of calculations
+  - Use functions to reuse code
+
+## Resources
+  - Functions overview https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+  - How to calculate interval overlap https://blogs.sas.com/content/sgf/2022/01/13/calculating-the-overlap-of-date-time-intervals/
+
