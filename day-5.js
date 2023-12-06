@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "day-5-input.txt";
+const fileName = "day-5-test.txt";
 
 const inputs = {
     seedToSoil: [],
