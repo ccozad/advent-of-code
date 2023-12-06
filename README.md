@@ -172,3 +172,19 @@ The second part of day 5 pushes the limits even more with giant ranges of number
   - Functions overview https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
   - How to calculate interval overlap https://blogs.sas.com/content/sgf/2022/01/13/calculating-the-overlap-of-date-time-intervals/
 
+# Day 6
+
+Day 6 is a pleasant change in pace with a straight forward set of calculations and results processing.
+
+# Concepts
+  - The results of completed calculations can be gathered in a collection for further analysis.
+  - We can use a reducer to take a collection of values, perform math on each element, accumulate results and produce a final answer
+
+## Ideas
+  - Iteration
+  - Reducers
+
+## Resources
+  - Iteration https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+  - Reduce function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce 
+
