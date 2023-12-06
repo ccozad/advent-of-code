@@ -9,7 +9,7 @@ function calculateRaceOutcomes(raceDuration, recordDistance) {
 
     let result = 0;
     for(let chargeTime = 0; chargeTime < raceDuration; chargeTime++) {
-        result = (raceDuration - chargeTime) * chargeTime;;
+        result = (raceDuration - chargeTime) * chargeTime;
         if (result > recordDistance) {
             outcomes.wins.push(chargeTime);
         } else {
