@@ -186,5 +186,23 @@ Day 6 is a pleasant change in pace with a straight forward set of calculations a
 
 ## Resources
   - Iteration https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
-  - Reduce function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce 
+  - Reduce function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+# Day 7
+
+Day 7 is challenging but not overwhelming. In this puzzle you are rankinghas hands for a card game, which may inspire you to work on your card games after completing the puzzle. Scoring cards in an exercise in enumerating characters in a string, counting occurances of each card then analyzing the counts to determine the greatest outcome. Ranking of these scores can be done by taking advantage of custom sort methods that use the rules of the challenge. In part 2 wild cards are introduced, complicating the scoring process to include more conditions. The hardest part of part 2 includes fitting the different rules along side part 1 and making sure you cover every condition. The full input appeared to cover nearly every scoring condition possible so if you error on the full data set, be sure to check and make sure you have covered every hand combination in the scoring part of your code.
+
+## Concepts
+  - We can enumerate characters in a string the same way we enumerate elements in an array
+  - Sort functions on collections take a function parameter to apply custom sort orders
+
+## Ideas
+  - Iteration
+  - Conditionals
+  - Accessing characters in a string
+  - Custom sort functions
+
+## Resources
+  - Access individual characters in a string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#character_access
+  - Sorting arrays and defining custom sort functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
