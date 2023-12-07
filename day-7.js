@@ -226,7 +226,7 @@ function determinePart2HandStrength(hand) {
             matchProperties.fiveOfAKind = true;
         }
     } else if (matchProperties.jokerCount == 5) {
-        // Five of a kind becomes five of a kind
+        // High card becomes five of a kind
         handStrength = 7;
         matchProperties.fiveOfAKind = true;
     }
