@@ -10,7 +10,6 @@ const part1CardValues = {
 };
 
 const part2CardValues = { ...part1CardValues, "J": 1 };
-    
 
 const jokerHandStrength = [
     [0, 1, 2, 3, 4, 5, 6, 7],
@@ -117,9 +116,7 @@ let players = lines.map((line) => {
 });
 
 players.sort((a, b) => { return compareHands(a, b, part1CardValues) });
-
 let part1Answer = players.reduce((acc, cur, i) => { return acc + (cur.bid * (i + 1)) }, 0);
-
 console.log(`Part 1: ${part1Answer}`);
 
 // Part 2
@@ -133,9 +130,5 @@ let players2 = lines.map((line) => {
 });
 
 players2.sort((a, b) => { return compareHands(a, b, part2CardValues) });
-
-let part2Answer = players2.reduce((acc, cur, i) => {
-    return acc + (cur.bid * (i + 1));
-}, 0);
-
+let part2Answer = players2.reduce((acc, cur, i) => { return acc + (cur.bid * (i + 1)) }, 0);
 console.log(`Part 2: ${part2Answer}`);
