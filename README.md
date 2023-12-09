@@ -206,3 +206,27 @@ Day 7 is challenging but not overwhelming. In this puzzle you are rankinghas han
   - Access individual characters in a string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#character_access
   - Sorting arrays and defining custom sort functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
+# Day 8
+
+Day 8 involves creating a data structure to store directed graph nodes and then executing commands in a repeated fashion until a goal is reached. Fast traversal of the graph requires using data structures that allow for fast access of nodes. The reference solution uses a dictionary lookup but accessing an array by index would also be a suitable solution. Part 2 of the challenge has an answer in the trillions so direct iteration would take a very long time to converge on an answer. Instead of using iteration it is dramatically faster to use math. The mathematical relation is not immediately clear but ultimately the lowest common multiple (LCM) approach can be used. LCM can be thought of like planets with different orbits aligning at a certain time in the future.
+
+## Concepts
+  - Graphs can be represented as node objects with additional information on edges or connections
+  - Navigating a graph can be accomplished by keeping track of the current node and following edges
+  - The lowest common multiple is the smallest number that is a multiple of two numbers. The two element equation can be extended to a recursive algorithm that can be run significantly faster than trying every combination.
+
+## Ideas
+  - Graphs
+  - Directed graphs
+  - Graph theory
+  - Lowest Common Multiple (LCM)
+
+## Resources
+  - Graph theory https://www.whitman.edu/mathematics/cgt_online/book/section05.11.html
+  - Graph algorithms https://www.freecodecamp.org/news/8-essential-graph-algorithms-in-javascript/
+  - Directed graphs https://algs4.cs.princeton.edu/42digraph/
+  - LCM review https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables/cc-6th-lcm/a/least-common-multiple-review
+  - Algorithm for LCM of a list of numbers https://www.geeksforgeeks.org/lcm-of-given-array-elements/
+
+
+
