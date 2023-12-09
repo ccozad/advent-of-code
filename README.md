@@ -176,7 +176,7 @@ The second part of day 5 pushes the limits even more with giant ranges of number
 
 Day 6 is a pleasant change in pace with a straight forward set of calculations and results processing.
 
-# Concepts
+## Concepts
   - The results of completed calculations can be gathered in a collection for further analysis.
   - We can use a reducer to take a collection of values, perform math on each element, accumulate results and produce a final answer
 
