@@ -228,5 +228,27 @@ Day 8 involves creating a data structure to store directed graph nodes and then 
   - LCM review https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables/cc-6th-lcm/a/least-common-multiple-review
   - Algorithm for LCM of a list of numbers https://www.geeksforgeeks.org/lcm-of-given-array-elements/
 
+# Day 9
+
+  Day 9 has you doing simple numerical derivatives that can be used to work backwards to predict the next value in a sequence. But fear not, no advanced calculus is needed for this task. Start with the first sequence and then continue to take difference sequences until a root state is reached where all values are zero. This is the same as reaching the derivative of a constant, which is 0. As the problem describes you can then work backwards until the original sequence is reached. For part 2 you can repeat the exercise above except for the previous value or you can save time by recognizing that the previous item is the same as the last item of the reversed sequence.
+
+## Concepts
+  - Separate the work of the loop from the control flow of the loop.
+  - In JavaScript arrays have list like properties that allow items to be easily added to the array, extending the size of the array
+  - Arrays can be easily reversed with methods or simply traversed in reverse order
+
+## Ideas
+  - Dynamic arrays
+  - Lists
+  - Enumerate a list in reverse order
+  - Reverse a list
+  - Reverse an array
+
+## Resources
+  - Numerical methods for ordinary differential equations https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations
+  - Array reverse https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+  - Constant rule for differentiating constant functions https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)/03%3A_Derivatives/3.03%3A_Differentiation_Rules
+
+
 
 
