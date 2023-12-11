@@ -267,3 +267,18 @@ Part 1 of day 10 involves determining what piece a start position is and then fo
 ## Resources
   - Finding a point in a polygon https://en.wikipedia.org/wiki/Point_in_polygon
   - Points inside a polygon https://www.eecs.umich.edu/courses/eecs380/HANDOUTS/PROJ2/InsidePoly.html
+
+# Day 11
+
+Day 11 is a classic application search algorithms. Part 1 wants you to physically alter the number of rows and colums but it is best to stick with row and column cost arrtibutes for each cell to prepare for the much large univers in part 2. Adaptions of Dijkstra's shortest path algorithm are appropriate for this problem. You can pre-calculate distance from each galaxy to every other galaxy using simple iteration with a queue to hold unprocessed nodes.
+
+## Concepts
+  - We can store distances or costs as simple variables for each cell. A real worl application for this might be making a game with different movement rate tiles for a 2d platformer or calculating routes on a map.
+  - Algorithms such as Dijstra's shortest path can be used to find path costs.
+
+## Ideas
+  - Shortest path algorithms
+  - Dijkstra's shortest path algorithm
+
+## Resources
+  - Intro to Dijkstra's shortest path algorithm https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/
