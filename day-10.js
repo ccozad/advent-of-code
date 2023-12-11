@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "data/day-10-test2.txt";
+const fileName = "data/day-10-input.txt";
 
 const file = fs.readFileSync(fileName, 'utf8');
 const lines = file.split(/\r?\n/);
@@ -44,59 +44,62 @@ for(let i = 0; i < lines.length; i++) {
     }
 }
 
-// Determine start symbol
 board[start.row][start.col].visited = true;
 board[start.row][start.col].distance = 0;
 let top = board[start.row - 1][start.col];
 let bottom = board[start.row + 1][start.col];
 let left = board[start.row][start.col - 1];
 let right = board[start.row][start.col + 1];
-let searchPath1 = [];
-let searchPath2 = []
+let searchPath1;
+let searchPath2;
+// Determine start symbol
+function initializeStart() {
+    searchPath1 = [];
+    searchPath2 = [];
+    let topConnection = top.symbol == "|" || top.symbol == "7" || top.symbol == "F";
+    let bottomConnection = bottom.symbol == "|" || bottom.symbol == "J" || bottom.symbol == "L";
+    let leftConnection = left.symbol == "-" || left.symbol == "F" || left.symbol == "L";
+    let rightConnection = right.symbol == "-" || right.symbol == "7" || right.symbol == "J";
 
-let topConnection = top.symbol == "|" || top.symbol == "7" || top.symbol == "F";
-let bottomConnection = bottom.symbol == "|" || bottom.symbol == "J" || bottom.symbol == "L";
-let leftConnection = left.symbol == "-" || left.symbol == "F" || left.symbol == "L";
-let rightConnection = right.symbol == "-" || right.symbol == "7" || right.symbol == "J";
+    console.log(`Top connection: ${topConnection}`);
+    console.log(`Bottom connection: ${bottomConnection}`);
+    console.log(`Left connection: ${leftConnection}`);
+    console.log(`Right connection: ${rightConnection}`);
 
-console.log(`Top connection: ${topConnection}`);
-console.log(`Bottom connection: ${bottomConnection}`);
-console.log(`Left connection: ${leftConnection}`);
-console.log(`Right connection: ${rightConnection}`);
+    if (topConnection && bottomConnection) {
+        board[start.row][start.col].symbol = "|";
+        board[start.row][start.col].connections = [ { row: start.row - 1, col: start.col }, { row: start.row + 1, col: start.col }];
+        searchPath1.push(top);
+        searchPath2.push(bottom);
+    } else if (leftConnection && rightConnection) {
+        board[start.row][start.col].symbol = "-";
+        board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row, col: start.col + 1 }];
+        searchPath1.push(left);
+        searchPath2.push(right);
+    } else if (leftConnection && bottom.connections.up) {
+        board[start.row][start.col].symbol = "7";
+        board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row + 1, col: start.col } ];
+        searchPath1.push(left);
+        searchPath2.push(bottom);
+    } else if (leftConnection && bottomConnection) {
+        board[start.row][start.col].symbol = "J";
+        board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row - 1, col: start.col } ];
+        searchPath1.push(left);
+        searchPath2.push(top);
+    } else if (rightConnection && topConnection) {
+        board[start.row][start.col].symbol = "L";
+        board[start.row][start.col].connections = [ { row: start.row, col: start.col + 1 }, { row: start.row - 1, col: start.col }];
+        searchPath1.push(right);
+        searchPath2.push(top);
+    } else if (rightConnection && bottomConnection) {
+        board[start.row][start.col].symbol = "F";
+        board[start.row][start.col].connections = [ { row: start.row, col: start.col + 1 }, { row: start.row + 1, col: start.col }];
+        searchPath1.push(right);
+        searchPath2.push(bottom);
+    }
 
-if (topConnection && bottomConnection) {
-    board[start.row][start.col].symbol = "|";
-    board[start.row][start.col].connections = [ { row: start.row - 1, col: start.col }, { row: start.row + 1, col: start.col }];
-    searchPath1.push(top);
-    searchPath2.push(bottom);
-} else if (leftConnection && rightConnection) {
-    board[start.row][start.col].symbol = "-";
-    board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row, col: start.col + 1 }];
-    searchPath1.push(left);
-    searchPath2.push(right);
-} else if (leftConnection && bottom.connections.up) {
-    board[start.row][start.col].symbol = "7";
-    board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row + 1, col: start.col } ];
-    searchPath1.push(left);
-    searchPath2.push(bottom);
-} else if (leftConnection && bottomConnection) {
-    board[start.row][start.col].symbol = "J";
-    board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row - 1, col: start.col } ];
-    searchPath1.push(left);
-    searchPath2.push(top);
-} else if (rightConnection && topConnection) {
-    board[start.row][start.col].symbol = "L";
-    board[start.row][start.col].connections = [ { row: start.row, col: start.col + 1 }, { row: start.row - 1, col: start.col }];
-    searchPath1.push(right);
-    searchPath2.push(top);
-} else if (rightConnection && bottomConnection) {
-    board[start.row][start.col].symbol = "F";
-    board[start.row][start.col].connections = [ { row: start.row, col: start.col + 1 }, { row: start.row + 1, col: start.col }];
-    searchPath1.push(right);
-    searchPath2.push(bottom);
+    console.log(board[start.row][start.col]);
 }
-
-console.log(board[start.row][start.col]);
 
 function getNextNode(node) {
     let nextNode = undefined;
@@ -112,6 +115,8 @@ function getNextNode(node) {
 
     return nextNode;
 }
+
+initializeStart();
 
 let moreNodesToVisit = true;
 let distance = 0;
@@ -144,75 +149,36 @@ while(moreNodesToVisit) {
 }
 
 console.log(`Part 1: ${distance}`);
-/*let processQueue = [];
-board[0][0].outside = true;
-board[board.length - 1][board[0].length - 1].outside = true;
-processQueue.push(board[0][0]);
-processQueue.push(board[board.length - 1][board[board.length - 1].length - 1]);
 
-let count = 0;
-while(processQueue.length > 0) {
-    //console.log(processQueue);
-    let node = processQueue.shift();
-    
-    if(node.row < board.length - 1) {
-        bottom = board[node.row + 1][node.col];
-        if(bottom.outside == undefined) {
-            if (bottom.distance == undefined) {
-                bottom.outside = true;
-                processQueue.push(bottom);
-            }
-        }
-        
-    }
-
-    if(node.row > 0) {
-        top = board[node.row - 1][node.col];
-        if(top.outside == undefined) {
-            if (top.distance == undefined) {
-                top.outside = true;
-                processQueue.push(top);
-            }
-        }
-        
-    }
-
-    if(node.col < board[0].length - 1) {
-        right = board[node.row][node.col + 1];
-        if(right.outside == undefined) {
-            if (right.distance == undefined) {
-                right.outside = true;
-                processQueue.push(right);
-            }
-        }
-        
-    }
-
-    if(node.col > 0) {
-        left = board[node.row][node.col - 1];
-        if(left.outside == undefined) {
-            if (left.distance == undefined) {
-                left.outside = true;
-                processQueue.push(left);
-            }
-        }
-        
-    }
-
-    count++;
-}*/
-
+// Left to right
 for(let i = 0; i < board.length; i++) {
     let pipeCount = 0;
     for(let j = 0; j < board[i].length; j++) {
-        if (board[i][j].distance != undefined) {
+        if (board[i][j].distance != undefined && board[i][j].symbol == "|" && board[i][j].symbol != "J" && board[i][j].symbol != "L") {
+            pipeCount++; 
+        } else if (board[i][j].distance != undefined && board[i][j].symbol != "-" && board[i][j].symbol != "7" && board[i][j].symbol != "F") {
+            pipeCount--;
+        } 
+        else {
+            if(pipeCount % 2 == 0) {
+                board[i][j].outside = true;
+            }
+        }
+    }
+}
+
+// Right to left
+for(let i = 0; i < board.length; i++) {
+    let pipeCount = 0;
+    for(let j = board[i].length - 1; j >= 0; j--) {
+        if (board[i][j].distance != undefined && board[i][j].symbol == "|" && board[i][j].symbol != "J" && board[i][j].symbol != "L"){
             pipeCount++;
+        } else if (board[i][j].distance != undefined && board[i][j].symbol != "-" && board[i][j].symbol != "7" && board[i][j].symbol != "F") {
+            pipeCount--;
         } else {
             if(pipeCount % 2 == 0) {
                 board[i][j].outside = true;
-            } else {
-                board[i][j].outside = false;
-            }
+            } 
         }
     }
 }
@@ -232,14 +198,6 @@ for(let i = 0; i < board.length; i++) {
                 process.stdout.write(" ");
             }
         }
-            
-        /*if (board[i][j].distance > 0 || board[i][j].symbol == "S") {
-            outside = !outside;
-            break;
-        } else {
-            board[i][j].outside = outside;
-            insideCount++;
-        }*/
     }
 }
 
