@@ -76,7 +76,7 @@ function calculateAllDistances (expansionFactor) {
         }
     }
 
-    // Read each collumn, adjust colCost to 2 if no "#" characters are found
+    // Read each collumn, adjust colCost to expansion factor if no "#" characters are found
     for(let i = 0; i < universe[0].length; i++) {
         let col = [];
         let galaxyFound = false;
