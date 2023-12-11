@@ -249,6 +249,21 @@ Day 8 involves creating a data structure to store directed graph nodes and then 
   - Array reverse https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
   - Constant rule for differentiating constant functions https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)/03%3A_Derivatives/3.03%3A_Differentiation_Rules
 
+# Day 10
 
+Part 1 of day 10 involves determining what piece a start position is and then following a network directions in two directions to calculate distances from the start. Part 2 can very tricky if you are not familiar with approaches for testing if points are inside or outside a complex polygon. Even if you are aware of the algorithm to use it can be tricky to know how to manipulate the large data set.
 
+## Concepts
+  - The graph data structure for this problem needs to stor information about the symbol, row, column and connections
+  - We can figure out what type of piece the start is by looking at what type of connections are possible in the up, down, left and right directons
+  - As the elaborate path is followed we start from one direction and move to the cell in the second direction
+  - We have reached the furtherest point when each independent search path meets at the same cell
+  - We can use the even odd algorithm to count wall interesctions to determine if we are in the polygon or not. This approach is complicated by what to with corner pieces and pieces aligned with the index. One way to get around this is to think about a "virtual sample" that is a little above or below the line being sample. This eliminates all corners and leaves a simpler model of wall or no wall at each point along the ray being tested.
+  - There s likely an optimization to interract with fewer nodes but for the sake of simplicity the reference solution assigns inside or outside the polygon to all cells on the board
 
+## Ideas
+  - Determine if a point is inside or outside a polygon
+
+## Resources
+  - Finding a point in a polygon https://en.wikipedia.org/wiki/Point_in_polygon
+  - Points inside a polygon https://www.eecs.umich.edu/courses/eecs380/HANDOUTS/PROJ2/InsidePoly.html
