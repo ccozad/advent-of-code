@@ -81,7 +81,7 @@ function initializeStart() {
         board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row + 1, col: start.col } ];
         searchPath1.push(left);
         searchPath2.push(bottom);
-    } else if (leftConnection && bottomConnection) {
+    } else if (leftConnection && topConnection) {
         board[start.row][start.col].symbol = "J";
         board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row - 1, col: start.col } ];
         searchPath1.push(left);
