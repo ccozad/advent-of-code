@@ -76,7 +76,7 @@ function initializeStart() {
         board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row, col: start.col + 1 }];
         searchPath1.push(left);
         searchPath2.push(right);
-    } else if (leftConnection && bottom.connections.up) {
+    } else if (leftConnection && bottomConnection) {
         board[start.row][start.col].symbol = "7";
         board[start.row][start.col].connections = [ { row: start.row, col: start.col - 1 }, { row: start.row + 1, col: start.col } ];
         searchPath1.push(left);
