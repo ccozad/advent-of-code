@@ -1,6 +1,5 @@
 const exp = require('constants');
 const fs = require('fs');
-const { TransformStreamDefaultController } = require('node:stream/web');
 const fileName = "data/day-14-input.txt";
 
 function printBoard(board) {
