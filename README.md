@@ -282,3 +282,56 @@ Day 11 is a classic application search algorithms. Part 1 wants you to physicall
 
 ## Resources
   - Intro to Dijkstra's shortest path algorithm https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/
+
+# Day 12
+
+Work in progress
+
+# Day 13
+
+Work in progress
+
+# Day 14
+
+Day 14 part 1 tests your ability to think about your data structure in terms of columns and how data values in each column change with the rules given in the problem. While you can be clever and move the column values in place, it is simpler to iterate the column, collect round rocks and empty spaces into their own storage and write them out in the correct order when a fixed rock or the other edge is met. The real input is a reasonable size so this approach of trading CPU cycles for space in effective.
+
+Part 2 of this problem introduces movement in the other three compass directions. The code code for these sections is going to be very similar to the one movement direction from part 1. While you could make one mega function that handles all directions at once, it is likely easier to grasp four different functions, one for each movement direction. With this approach you can write each implementation without breaking the others. As an extra challenge you can try to separate your four movement functions into one function by analyzing the code that is shared and different. Once you have carefuly implemented with each cycles. Be sure to carefully implement your code so you can exactly reproduce the example cases in the problem description. You will be faced with a nearly impossible number of cycles to calculate. Unless you have access to a super computer or a high end GPU you are going to need to do some thinking. Try to do 1,000 cycles and plot the data on a graph. What you should see in the data is that if eventually settles into a regular oscilation pattern. Observe how many steps it take to move from one value back to the same value. This is the period of the repeating function. Once you known the period, write down a few values in the range. Look at indexes beyond the range you observed. Pick a few indexes and see if you can predict their value using only their index. Verify your predicted answer matches the actual answer. Continue working with the numbers until you can reliably predict values. Use this same approach for the very large iteration count in the problem. Watch out for off by one numbers. If you get the wrong answer try a neighboring value. All of the calculations for part 2 can be done by hand with a pencil, paper and calculator.
+
+## Concepts
+  - You can simplify sorting by using extra scratch space to sort items as you see them. As long as the sort space can fit in memory this is easy on your time because you don't have to get in place sorting algorithms working perfectly.
+  - Don't Repeat Yourself (DRY) is a common mantra in programming. Following this concept helps reduce maitenance effort and it helps prevent subtle bugs of changing an implementation in one place and missing that change in another. But DRY is a final state. You have need to write a few ugly drafts to reach the pristine state of a DRY implementation. Show your code is right, make sure sure it has good enough performance, they look at how you maintain and optimize your functional solution.
+  - Sometimes patterns emerge in our data and we can use math to calculate beyond what our CPU and memory can handle. Extracting patterns and relationships is exactly what many machine learning models do today.
+  - Doing things like graphing or analyzing complex output is easier when yu write data to a file.
+
+## Ideas
+  - Sorting using additional memory
+  - Periodic functions in math
+  - Write data to a file
+
+## Resources
+  - We only have two classes to sort but larger data sets can use merge sort https://en.wikipedia.org/wiki/Merge_sort
+  - Math background of periodic function https://www.cuemath.com/algebra/periodic-function/ 
+  - Writing file in Node.js https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs 
+
+# Day 15
+
+Day 15 is about carefully following directions, understanding how to traverse datastructures and how to manipulate the contents of those data structures. Be sure in part 2 to account for the wider inputs that aren't part of the smaller input examples.
+
+## Concepts
+  - An array or list stores data in a fixed order and allows data to be accessed by continious, zero based indexes
+  - Javascript arrays behave more like lists becuase their contents can be dynamically added and substracted along with other more complex operators.
+  - We can perform a math equation where the same variable appears on the left and right of the equals sign because of the order that math operations are evaluated. Math operations follow the typical order of operations from algebra, namely PEMDAS, parenthesis, exponents, multiplication/division (in left to right order), addition/subtraction (in left to right order). Other operations like boolean comparisons happen after other operations and finally assignment happens. When assignment happens all of the right side is evaluated and converted to a value before being assigned to the left side variable.
+  - The remainder operator returns the integer remainder of division. This operator is handy when you want to gurantee that a value is always between zero and value. This type of operation is common when accessing an array.
+
+## Ideas
+  - Order of operations
+  - Lists
+  - Remainder operator
+
+## References
+  - Javascript order of operations https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+  - Assignment operator in Javascript https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment 
+  - Remainder operator https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+  - Splice array method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+  - Index of array method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+  - Substring string method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
