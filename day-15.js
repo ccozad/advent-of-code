@@ -17,14 +17,6 @@ function calculateHash(input) {
     return currentValue;
 }
 
-function printBoxes(boxes) {
-    for(let i = 0; i < boxes.length; i++) {
-        if(boxes[i].length == 0) {
-            continue;
-        }
-    }
-}
-
 function calculateFocusingPower(boxes) {
     let sum = 0;
 
@@ -35,7 +27,6 @@ function calculateFocusingPower(boxes) {
         for(let j = 0; j < boxes[i].length; j++) {
             let value = Number(boxes[i][j].split(" ")[1]);
             let focusValue = (i + 1) *(j + 1) * value;
-            console.log(`Box[${i}]: ${boxes[i][j]} Focus Value: ${focusValue}`);
             sum += focusValue;
         }
     }
@@ -47,7 +38,6 @@ let sum = 0;
 for (let i = 0; i < input.length; i++) {
     let hashValue = calculateHash(input[i]);
     sum += hashValue;
-    //console.log(`Hash value for ${input[i]} is ${hashValue}`);
 }
 
 console.log(`Part 1: ${sum}`);
@@ -59,7 +49,6 @@ for(let i = 0; i < 256; i++) {
 }
 
 for(let i = 0; i < input.length; i++) {
-    //console.log(`Processing ${input[i]}`);
     let operationIndex = input[i].includes("-") ? input[i].indexOf("-") : input[i].indexOf("=");
     let key = input[i].substring(0, operationIndex);
     let lensValue = input[i].substring(operationIndex + 1);
@@ -67,8 +56,6 @@ for(let i = 0; i < input.length; i++) {
     
     let box = calculateHash(key);
     let operation = input[i][operationIndex];
-
-    console.log(`Box: ${box}, Operation: ${operation}, Key: ${key}, Value: ${value}`);
 
     if(operation == "-") {
         for(let i = 0; i < boxes[box].length; i++) {
