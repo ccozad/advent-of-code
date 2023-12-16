@@ -335,3 +335,18 @@ Day 15 is about carefully following directions, understanding how to traverse da
   - Splice array method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
   - Index of array method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
   - Substring string method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+
+# Day 16
+
+Day 16 can be thought of like a game or scientific simulation that ticks time forward and updates the world state at each tick. In this case the world state involves sending light to different cells on the board and interacting with different elements that change the beam's direction or the number of beams. Programming the beam is similar to the concept of turtle graphics, an approach to teach programming where simple instructions are interpreted as drawing commands performed by an imaginary turtle.
+
+## Concepts
+  - A collection of different simulation states can be kept in sync by managing a world clock and updating all simulations in sequence before moving to the next time interval. In the game industry developers try to update world state in between frames. Scientific simulations may make complex calculations that take much longer to simulate than the original event. For example, a fluid dynamics simulation may solve for flows in a complex pipeline for safety testing
+
+## Ideas
+  - Simulations
+  - Time stepping
+  - Turtle graphics
+
+## References
+  - Turtle graphics https://en.wikipedia.org/wiki/Turtle_graphics

@@ -1,38 +1,24 @@
 const exp = require('constants');
 const fs = require('fs');
 const fileName = "data/day-16-input.txt";
-//console.log(lines);
-//console.log(board);
 
 function solveBoard(board, beams) {
     let time = 0;
     let beamsActive = true;
-    let visitLimit = 1000;
     let distanceLimit = 1000;
     let distanceLimitReached = false;
     while(beamsActive && !distanceLimitReached) {
-        //if(time > 100) {
-        //    break;
-        //}
         time++;
-
-        //console.log(`\nTime: ${time}`);
-        //console.log(`Beams: ${beams.length}`);
-        //console.log(beams);
         // Step each beam
         // We may add beams as we go so we need to know how many beams we start with
         let iterations = beams.length;
-        //console.log(`Iterations: ${iterations}`);
+
         for(let i = 0; i < iterations; i++) {
-            //console.log(`Beam ${i}:`);
-            
             if(!beams[i].isActive) {
-                //console.log("Beam is inactive");
                 continue;
             }
 
             if (beams[i].row < 0 || beams[i].row >= board.length || beams[i].col < 0 || beams[i].col >= board[beams[i].row].length) {
-                //console.log("Beam is out of bounds");
                 beams[i].isActive = false;
                 continue;
             }
@@ -48,13 +34,6 @@ function solveBoard(board, beams) {
                 break;
             }
 
-            //if(cell.visits > visitLimit) {
-            //    visitLimitReached = true;
-            //    break;
-            //}
-
-            //console.log(`Cell: ${cell.piece}`);
-
             if (cell.piece == "|") {
                 if ( beams[i].direction == "E" || beams[i].direction == "W") {
                     // Stop forking the beam to allow more iterations
@@ -63,7 +42,6 @@ function solveBoard(board, beams) {
                     if (cell.splitCount < 10) {
                         beams.push({row: beams[i].row - 1, col: beams[i].col, direction: "N", isActive: true});
                         beams.push({row: beams[i].row + 1, col: beams[i].col, direction: "S", isActive: true});
-                        //cell.verticalForkActivated = true;
                     }
                 }
             } else if (cell.piece == "-") {
@@ -75,7 +53,6 @@ function solveBoard(board, beams) {
                     if (cell.splitCount < 10) {
                         beams.push({row: beams[i].row, col: beams[i].col + 1, direction: "E", isActive: true});
                         beams.push({row: beams[i].row, col: beams[i].col - 1, direction: "W", isActive: true});
-                        //cell.horizontalForkActivated = true;
                     }
                 }
             } else if (cell.piece == "/") {
@@ -114,7 +91,6 @@ function solveBoard(board, beams) {
         beams = beams.filter(beam => beam.isActive);
 
         beamsActive = beams.length > 0;
-        //console.log(`Beams active: ${beamsActive}`);
     }
 }
 
