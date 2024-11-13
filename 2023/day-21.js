@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fileName = "data/day-21-input.txt";
+const fileName = "data/day-21-test2.txt";
 
 function isvalid(grid, col, row) {
     return col >= 0 && col < grid.length && row >= 0 && row < grid.length;
@@ -94,7 +94,7 @@ function part1() {
 
     let history = {};
 
-    for(let targetSteps=0; targetSteps< 32; targetSteps++) {
+    for(let targetSteps=1; targetSteps< 11; targetSteps++) {
         let processqueue = [];
         let reachableCells = {};
         let calculations = 0;
@@ -126,7 +126,17 @@ function part1() {
             calculations++;
         }
     
-        console.log(`${targetSteps}\t${Object.keys(reachableCells).length}`);
+        console.log(`\n${targetSteps},${Object.keys(reachableCells).length}`);
+        for(let i = 0; i < grid.length; i++) {
+            for(let j = 0; j < grid[0].length; j++) {
+                if (reachableCells.hasOwnProperty(`${i}-${j}`)) {
+                    process.stdout.write("O");
+                } else {
+                    process.stdout.write(grid[i][j]);
+                }
+            }
+            console.log();
+        }
     }
 }
 

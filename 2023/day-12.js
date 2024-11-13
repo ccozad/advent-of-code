@@ -1,3 +1,4 @@
+const { group } = require('console');
 const exp = require('constants');
 const fs = require('fs');
 const fileName = "data/day-12-input.txt";
@@ -25,40 +26,58 @@ const pow2Lookup = {
 }
 
 function isValidCondition(condition, expectedGroups) {
-    let isValid = true;
     let groupSize = 0;
-    let groupsFound = [];
-
+    let groupsFound = 0;
+    let groupIndex = 0;
 
     for(let i = 0; i < condition.length; i++) {
         if (condition[i] == "#") {
             groupSize++;
         } else if(condition[i] == ".") {
             if (groupSize > 0) {
-                groupsFound.push(groupSize);
-                groupSize = 0;
+                groupsFound++;
+                if(groupsFound >= expectedGroups.length) {
+                    return false;
+                } else if (groupSize != expectedGroups[groupIndex]) {
+                    return false;
+                } else {
+                    groupSize = 0;
+                    groupIndex++;
+                }
             }
         }
     }
 
     if (groupSize > 0) {
-        groupsFound.push(groupSize);
-    }
-
-    // Compare detected groups and expected groups
-    if (groupsFound.length != expectedGroups.length) {
-        isValid = false;
-    } else {
-        for(let i = 0; i < groupsFound.length; i++) {
-            if (groupsFound[i] != expectedGroups[i]) {
-                isValid = false;
-                break;
-            }
+        groupsFound++;
+        if(groupsFound >= expectedGroups.length) {
+            return false;
+        } else if (groupSize != expectedGroups[expectedGroups.length - 1]) {
+            return false;
         }
     }
 
+    return true;
+}
 
-    return isValid;
+function isValidGroup(pattern, expectedGroupSize, memo = {}) {
+    let key = `${pattern},${expectedGroupSize}`;
+    
+    if (memo.hasOwnProperty(key)) {
+        return memo[key];
+    }
+
+    let groupSize = 0;
+
+    for(let i = 0; i < pattern.length; i++) {
+        if (patther[i] == "#") {
+            groupSize++;
+        } else {
+            return false;
+        }
+    }
+
+    return groupSize == expectedGroupSize;
 }
 
 function generateArrangement(index, memo = {}) {
@@ -80,10 +99,34 @@ function generateArrangement(index, memo = {}) {
     return memo[index];
 }
 
+// ???.### [1, 0, 1, 0, 3]
+//segments: ["???", ".", "###"]
+function processSegment(segment, groupSize, memo = {}) {
+    if (memo.hasOwnProperty(groupSize) && memo[groupSize].hasOwnProperty(segment)) {
+        return memo[groupSize][segment];
+    }
+
+    // There are zero moves because there are not enough items
+    if (segment.length < groupSize) {
+        memo[groupSize][segment] = [];
+        return []
+    }
+
+    let arrangements = [];
+    let testPattern = "";
+    for(let i = 0; i < segment.length - groupSize + 1; i++) {
+        testPattern = segment.substring(i, i + groupSize);
+        testPattern.replace("?", "#");
+        if (isValidCondition(testPattern, [groupSize])) {
+            arrangements.push(testPattern);
+        }
+    }
+
 function findArrangements(condition, expectedGroups, memo = {}) {
     //console.log(`Finding arrangements for condition: ${condition}, groups: ${expectedGroups}`)
     let arrangements = 0;
     let unknowns = [];
+    unknownGroups = [];
     for(let i = 0; i < condition.length; i++) {
         if (condition[i] == "?") {
             unknowns.push(i);
@@ -91,14 +134,11 @@ function findArrangements(condition, expectedGroups, memo = {}) {
     }
 
     let arrangement = "";
-    let permutations = pow2Lookup[unknowns.length];;
-    /*if (pow2Lookup.hasOwnProperty(unknowns.length)) {
-        permutations = pow2Lookup[unknowns.length];
-    } else {
-        permutations = Math.pow(2, unknowns.length);
-        pow2Lookup[unknowns.length] = permutations;
-    }*/
+    let permutations = pow2Lookup[unknowns.length];
+
     
+    // Can we take a different approach here?
+    // Every pattern is always tried, even if it is a dead end.
     let conditionArray = condition.split("");
     for(let i = 0; i < permutations; i++) {
         arrangement = generateArrangement(i, memo);
@@ -109,7 +149,6 @@ function findArrangements(condition, expectedGroups, memo = {}) {
 
         if (isValidCondition(conditionArray, expectedGroups)) {
             arrangements++;
-            //console.log(`Found arrangement: ${newCondition}`);
         }
     }
 
