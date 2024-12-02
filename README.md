@@ -93,13 +93,13 @@ Day 1 introduces you to the idea of the challenge and focuses on iteration, the 
 
 ## Day 2
 
-Day 2 has you checking for different conditions in a series. The problem also introduces the idea of simple what if analysis to search for additional solutions.
+Day 2 has you checking for outliers in a series. The problem also introduces the idea of simple what if analysis to search for additional solutions.
 
 ### Concepts
 
   - We can end a loop early when a failing condition in encountered
   - We can make a function that works on any array of numbers
-  - We can alter the items in an array my making a copy and performing splice operations
+  - We can alter the items in an array by making a copy and performing splice operations
 
 ### Ideas
 
@@ -109,7 +109,7 @@ Day 2 has you checking for different conditions in a series. The problem also in
   - Check for a difference larger or smaller than a threshold
   - Break from a loop early
   - Use a function to repeat the same operations on different data
-  - Copy an array and use remove elements to create different variants while preserving the original array
+  - Copy an array and remove elements to create different variants while preserving the original array
 
 ### Resources
   - Break a loop early https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break
