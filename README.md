@@ -65,13 +65,38 @@ This document is written with JavaScript in mind. Where possible appropriate gen
 
 # 2024
 
-Coming soon!
+## Day 1
+
+Day 1 introduces you to the idea of the challenge and focuses on iteration, the definition  of math terms, arrays and dictionaries.
+
+### Concepts
+  - We can iterate each line in a file and parse out multiple numbers from each line.
+  - Arrays of numbers can be sorted in an arbitrary order such as ascending or descending
+  - The difference of two numbers is positive so we take the absolute value of subtracting one number with another. This removes the need to do the subtraction is a specific order
+  - We gather a unique count of each item in a collection using a dictionary
+
+### Ideas
+
+  - Read each line is a file
+  - Parse integers separated by a delimiter
+  - Sort an array in ascending order
+  - Iterate over items in an array
+  - Access an array by index
+  - Count the number of times an item has occurred using a dictionary data structure
+
+### Resources
+  - Read lines in a text file https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs 
+  - Split a string based on a delimiter https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split 
+  - Parse an integer https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+  - Calculate the absolute value of a number https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs 
+  - Sort an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
+
 
 # 2023
 
 ## Day 1
 
-The general apporach for day 1 is to recognize the first and last digits amid a wide variety of text. Part 2 introduces a tricky undocumented case that you have to code around.
+The general approach for day 1 is to recognize the first and last digits amid a wide variety of text. Part 2 introduces a tricky undocumented case that you have to code around.
 
 ### Concepts
   - Regular expressions are a special language that represent text patterns and operations such as extracting specific parts of a pattern called matches
