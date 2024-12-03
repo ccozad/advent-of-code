@@ -116,6 +116,26 @@ Day 2 has you checking for outliers in a series. The problem also introduces the
   - Declare a function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
   - Different ways to copy an array https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
 
+## Day 3
+
+Day 3 involves regular expressions and stream processing
+
+### Concepts
+  - We can use regular expressions to find text patterns in large bodies of text
+  - BigInt can be used to store and do basic math operations on numbers that are too large for the built in `number` type
+  - We can traverse strings to look for markers and conditionally process text
+
+### Ideas
+  - Find patterns in text using regular expressions
+  - Do math on large numbers using the BigInt class
+  - Find the index of a string in a larger string starting from a specific starting point
+
+### Resources
+  - Regular expression notes and test tool https://regexr.com
+  - Regular expressions (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
+  - Find all matches of a regular expression in a strig (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
+  - Work with large numbers using the BigInt class (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
+  - Find the index of one string in another string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 
 # 2023
 
