@@ -127,13 +127,13 @@ Day 3 involves regular expressions and stream processing
 
 ### Ideas
   - Find patterns in text using regular expressions
-  - Do math on large numbers using the BigInt class
+  - Do math on large numbers
   - Find the index of a string in a larger string starting from a specific starting point
 
 ### Resources
   - Regular expression notes and test tool https://regexr.com
   - Regular expressions (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
-  - Find all matches of a regular expression in a strig (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
+  - Find all matches of a regular expression in a string (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
   - Work with large numbers using the BigInt class (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
   - Find the index of one string in another string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 
