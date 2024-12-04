@@ -137,6 +137,25 @@ Day 3 involves regular expressions and stream processing
   - Work with large numbers using the BigInt class (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
   - Find the index of one string in another string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 
+## Day 4
+Day 4 involves finding words in a word search
+
+### Concepts
+  - We can form a consistent grid using two dimensional arrays
+  - Array elements can be accessed using a zero based index
+  - We can skip ranges that are outside of the bounds of an array
+  - We can use for loops to traverse every index in an array
+
+### Ideas
+  - Read text into a two dimensional array
+  - Check values at array indexes
+  - Check if an index is valid for a given array
+  - Try all combinations for a game board location
+
+### Resources
+  - Arrays (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+
 # 2023
 
 ## Day 1
