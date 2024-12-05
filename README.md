@@ -155,6 +155,30 @@ Day 4 involves finding words in a word search
 ### Resources
   - Arrays (JavaScript) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
+## Day 5
+Day 5 steps up the difficulty as you consider custom ordering rules for lists
+
+### Concepts
+  - A dictionary is a data structure that allows values to be accessed in O(1) time using keys
+  - We can use arbitrary strings as keys in a dictionary
+  - A tuple is an ordered list of numbers
+  - Given a rule a < b, we can create a dictionary key for the tuple (a,b) with a value to indicate a valid ordering
+  - Given the same rule a < b, we can consider the inverse relationship and create a dictionary key for the tuple (b,a) with a value to indicate an INVALID ordering
+  - Arrays can have arbitrary sort orders using a custom comparison function
+
+### Ideas
+  - Read text from a file
+  - Process text differently based on a condition
+  - Create a dictionary with text keys and boolean values
+  - Generate dictionary keys using a formatted string
+  - Lookup values in a dictionary using a key
+  - Sort an array using a custom comparison function
+
+### Resources
+  - How to use an object as a dictionary https://www.makeuseof.com/javascript-dictionaries-create-use/
+  - Template literals https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals 
+  - Use a custom comparison function to sort an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 
 # 2023
 
